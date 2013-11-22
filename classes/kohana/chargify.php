@@ -109,7 +109,8 @@ class Kohana_Chargify {
 				return;
 			}
 
-			$options = Kohana::config('chargify.'.Chargify::$default);
+			// $options = Kohana::config('chargify.'.Chargify::$default);
+			 $options = Kohana::$config->load('chargify.'.Chargify::$default);
 		}
 
 		if (Arr::get($options, 'subdomain') === NULL)
@@ -539,7 +540,8 @@ class Kohana_Chargify {
 
 		foreach ($this->_embedded as $resource => $attributes)
 		{
-			$result[$resource] = $attributes->as_array();
+			// $result[$resource] = $attributes->as_array();
+			$result[$resource] = $attributes->_attributes;
 		}
 
 		return array($this->_resource_name => $result);

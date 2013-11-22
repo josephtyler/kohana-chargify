@@ -24,7 +24,7 @@ class Kohana_Chargify_Request extends Request {
 			;
 	}
 
-	public static function factory($uri = TRUE, Cache $cache = NULL, $injected_routes = array())
+	public static function factory($uri = TRUE, HTTP_Cache $cache = NULL, $injected_routes = array())
 	{
 		return new Chargify_Request($uri, $cache, $injected_routes);
 	}
